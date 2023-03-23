@@ -1,5 +1,5 @@
 
-fun ShowMenu() {
+fun showMenu() {
     println("Menu for Operations on Student Data")
     println("1. Add Student")
     println("2. Delete Student")
