@@ -20,7 +20,7 @@ fun addStudent() {
     println("Student added successfully.")
 }
 
-fun display() {
+fun displayData() {
     println("|-------------------------------------|")
     println("|  Data of the Students in the list:  |")
     println("|-------------------------------------|")
@@ -53,6 +53,27 @@ fun searchStudent() {
             println("$subject: $marks")
         }
     }
+}
+
+fun deleteStudent() {
+    print("Enter the roll number of the student you want to delete: ")
+    val rollNumber = readln().toInt()
+
+    val student = students.find { it.rollNumber == rollNumber }
+    if (student == null) {
+        println("Student with roll number $rollNumber not found.")
+    } else {
+        students.remove(student)
+        println("Student deleted successfully.")
+    }
+}
+
+fun insertData(){
+
+}
+
+fun sortData(){
+
 }
 
 

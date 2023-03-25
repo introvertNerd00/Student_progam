@@ -2,8 +2,11 @@
 fun main(){
 
     addStudent()
-    display()
     addStudent()
     searchStudent()
-
+    displayData()
+    deleteStudent()
+    displayData()
+    insertData()
+    sortData()
 }
