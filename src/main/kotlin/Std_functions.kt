@@ -59,12 +59,18 @@ fun deleteStudent() {
     }
 }
 
-fun insertData(){
-
+fun insertData(name: String, rollno: Int,marks:Int){
+    students["name"] = name
+    students["rollno"] = rollno
+    students["marks"]=marks
+    println("Data added successfully")
+}
 }
 
 fun sortData(){
-
+val students = mutableListOf<Student>()
+  students.sortBy{it.marks}
+  
 }
 
 
