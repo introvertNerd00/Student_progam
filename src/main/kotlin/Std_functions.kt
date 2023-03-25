@@ -59,16 +59,52 @@ fun deleteStudent() {
     }
 }
 
-fun insertData(name: String, rollno: Int,marks:Int){
-    students["name"] = name
-    students["rollno"] = rollno
-    students["marks"]=marks
-    println("Data added successfully")
-}
+fun insertData() {
+    print("Enter the roll number of the student you want to modify data for: ")
+    val rollNumber = readLine()?.toInt() ?: return
+
+    // Find the student with the given roll number
+    val student = students.find { it.rollNumber == rollNumber }
+
+    if (student == null) {
+        println("Student with roll number $rollNumber not found.")
+    } else {
+        println("What data do you want to modify?")
+        println("1. Name")
+        println("2. Roll Number")
+        println("3. Marks")
+
+        print("Enter your choice: ")
+        val choice = readLine()?.toIntOrNull() ?: return
+
+        when (choice) {
+            1 -> {
+                print("Enter the new name: ")
+                val newName = readLine() ?: return
+                student.name = newName
+                println("Name updated successfully.")
+            }
+            2 -> {
+                print("Enter the new roll number: ")
+                val newRollNumber = readLine()?.toInt() ?: return
+                student.rollNumber = newRollNumber
+                println("Roll number updated successfully.")
+            }
+            3 -> {
+
+                print("Enter the new marks : ")
+                val newMarks = readlnOrNull()?.toInt() ?: return
+                student.marks = newMarks
+                println("Marks updated successfully.")
+            }
+            else -> println("Invalid choice.")
+        }
+    }
 }
 
+
 fun sortData(){
-val students = mutableListOf<Student>()
+
   students.sortBy{it.marks}
   
 }
