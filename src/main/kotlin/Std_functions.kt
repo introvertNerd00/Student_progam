@@ -1,6 +1,5 @@
 //mutable list of students to add multiple records of students and also perform
 val students = mutableListOf<Student>()
-val subjects = listOf("Calculus", "DSA", "COAL")
 
 fun addStudent() {
     print("Enter the name of the student: ")
@@ -9,12 +8,8 @@ fun addStudent() {
     print("Enter the roll number of the student: ")
     val rollNumber = readln().toInt()
 
-    val marks = mutableMapOf<String, Int>()
-    for (subject in subjects) {
-        print("Enter the marks for $subject: ")
-        val marksForSubject = readln().toInt()
-        marks[subject] = marksForSubject
-    }
+    print("Enter the marks of student: ")
+    val marks = readln().toInt()
 
     students.add(Student(name, rollNumber, marks))
     println("Student added successfully.")
@@ -27,10 +22,8 @@ fun displayData() {
     students.forEach { student ->
         println("Name: ${student.name}")
         println("Roll Number: ${student.rollNumber}")
-        println("Marks:")
-        student.marks.forEach { (subject, marks) ->
-            println("$subject: $marks")
-        }
+        println("Marks: ${student.marks}")
+
         println()
     }
 }
@@ -48,10 +41,8 @@ fun searchStudent() {
     } else {
         println("Name: ${student.name}")
         println("Roll Number: ${student.rollNumber}")
-        println("Marks:")
-        student.marks.forEach { (subject, marks) ->
-            println("$subject: $marks")
-        }
+        println("Marks: ${student.marks}")
+
     }
 }
 
