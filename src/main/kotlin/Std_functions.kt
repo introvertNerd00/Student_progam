@@ -19,3 +19,17 @@ fun addStudent() {
     println("Student added successfully.")
 }
 
+fun display() {
+    println("|-------------------------------------|")
+    println("|  Data of the Students in the list:  |")
+    println("|-------------------------------------|")
+    students.forEach { student ->
+        println("Name: ${student.name}")
+        println("Roll Number: ${student.rollNumber}")
+        println("Marks:")
+        student.marks.forEach { (subject, marks) ->
+            println("$subject: $marks")
+        }
+        println()
+    }
+}
