@@ -1,17 +1,17 @@
 val students = mutableListOf<Student>()
-val subjects = listOf("Maths", "Science", "English")
+val subjects = listOf("Calculus", "DSA", "COAL")
 
 fun addStudent() {
     print("Enter the name of the student: ")
-    val name = readLine() ?: return
+    val name = readln()
 
     print("Enter the roll number of the student: ")
-    val rollNumber = readLine()?.toInt() ?: return
+    val rollNumber = readln().toInt()
 
     val marks = mutableMapOf<String, Int>()
     for (subject in subjects) {
         print("Enter the marks for $subject: ")
-        val marksForSubject = readLine()?.toInt() ?: return
+        val marksForSubject = readln().toInt()
         marks[subject] = marksForSubject
     }
 
@@ -33,3 +33,6 @@ fun display() {
         println()
     }
 }
+
+
+
