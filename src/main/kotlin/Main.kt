@@ -16,11 +16,11 @@ fun main() {
             1 -> addStudent()
             2 -> deleteStudent()
             3 -> searchStudent()
-            4 -> sortStudents()
+            4 -> sortData()
             5 -> displayData()
             6 -> insertData()
             else -> println("Invalid choice.")
         }
     }
 }
-}
+

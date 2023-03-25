@@ -1,3 +1,3 @@
-data class Student(val name: String,
-                   val rollNumber: Int,
-                   val marks: Int)
+data class Student(var name: String,
+                   var rollNumber: Int,
+                   var marks: Int)
