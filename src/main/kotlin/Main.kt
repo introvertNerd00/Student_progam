@@ -1,4 +1,4 @@
-
+import kotlin.system.exitProcess
 
 fun main() {
     while (true) {
@@ -9,6 +9,7 @@ fun main() {
         println("4. Sort")
         println("5. Display Data")
         println("6. Insert Data")
+        println("7. Exit Program")
         print("Enter your choice: ")
         val choice = readLine()?.toIntOrNull() ?: continue
         
@@ -19,6 +20,7 @@ fun main() {
             4 -> sortData()
             5 -> displayData()
             6 -> insertData()
+            7 -> exitProcess(0)
             else -> println("Invalid choice.")
         }
     }

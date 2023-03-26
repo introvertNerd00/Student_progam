@@ -61,7 +61,7 @@ fun deleteStudent() {
 
 fun insertData() {
     print("Enter the roll number of the student you want to modify data for: ")
-    val rollNumber = readLine()?.toInt() ?: return
+    val rollNumber = readlnOrNull()?.toInt() ?: return
 
     // Find the student with the given roll number
     val student = students.find { it.rollNumber == rollNumber }
@@ -75,18 +75,17 @@ fun insertData() {
         println("3. Marks")
 
         print("Enter your choice: ")
-        val choice = readLine()?.toIntOrNull() ?: return
 
-        when (choice) {
+        when (readln().toInt()) {
             1 -> {
                 print("Enter the new name: ")
-                val newName = readLine() ?: return
+                val newName = readln()
                 student.name = newName
                 println("Name updated successfully.")
             }
             2 -> {
                 print("Enter the new roll number: ")
-                val newRollNumber = readLine()?.toInt() ?: return
+                val newRollNumber = readln().toInt()
                 student.rollNumber = newRollNumber
                 println("Roll number updated successfully.")
             }
@@ -97,7 +96,9 @@ fun insertData() {
                 student.marks = newMarks
                 println("Marks updated successfully.")
             }
-            else -> println("Invalid choice.")
+            else -> {
+                println("Invalid choice.")
+            }
         }
     }
 }
